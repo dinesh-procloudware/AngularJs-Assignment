@@ -1,0 +1,16 @@
+<div class="mainContainer">
+    <div class="content">
+        <div ng-controller="ProImageController">
+            <h1>Images </h1>
+            <section>
+                <img src="{{imgSrc}}" width="200px" height="200px" />
+            </section>
+        </div>
+    </div>
+    <ul>
+        <li ng-repeat="pics in images" style="  list-style-type: none; display: inline-block;">
+            <img src="{{pics.src}}" style="width:70px; height:70px;margin-left: 5px;" ng-click='changeImage()'>
+        </li>
+    </ul>
+
+</div>

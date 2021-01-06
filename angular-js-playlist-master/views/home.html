@@ -1,0 +1,20 @@
+<div class="mainContainer">
+    <div class="content">
+        <div ng-controller="ProItemController">
+            Select Item
+            <select ng-model="selectItem">
+            <option value="" selected disabled>---Items---</option>
+          <option ng-repeat=" item in filterOptions.stores"> {{item.name}}</option>
+      </select>
+            <h5>
+                Selected item
+                <hr>{{selectItem}}
+            </h5>
+            <ul>
+                <li ng-repeat="item in data">
+                    {{item.name}}</li>
+            </ul>
+            </section>
+        </div>
+    </div>
+</div>

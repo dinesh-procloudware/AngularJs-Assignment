@@ -1,0 +1,23 @@
+<div class="mainContainer">
+    <div class="content">
+        <div ng-controller="ProController">
+            <input type="text" ng-model="search" placeholder="Search By Name" />
+            <button ng-click="order='name'">Order By Name</button>
+            <button ng-click="order='belt'">Order By Belt</button>
+            <ul>
+                <li ng-repeat="pro in proList | orderBy:order|filter:search" ng-show=" pro. available ">
+                    <img src="{{pro.thumb}}" style=" margin:-12px 10px 0 0; float:left; width:40px; height:30px; " <h3>{{pro.name}} -{{pro.rate| currency:'Rs'}}</h3>
+                    <div class=" remove " ng-click='removePro(pro)'>X</div>
+                    <span>{{pro.belt}}belt</span>
+                </li>
+
+            </ul>
+            <form ng-submit="addPro() ">
+                <input type="text " placeholder="Add Name " ng-model="newPro.name ">
+                <input type="text " placeholder="Add rate " ng-model="newPro.rate ">
+                <input type="text " placeholder="Add Belt " ng-model="newPro.belt ">
+                <input type="submit" value="Add Pro" />
+            </form>
+        </div>
+    </div>
+</div>
